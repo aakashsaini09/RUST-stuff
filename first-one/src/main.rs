@@ -1,28 +1,28 @@
 fn main() {
     conditionalsta()
 }
-// fn strInt(){
-//     // number
-//     println!("I'm a Rustacean!");
-//     let x: i32 = 20;
-//     println!("The value of x is: {}", x*2);
-//     for i in 0..x {
-//         println!("i = {}", i);
-//     }
+fn strInt(){
+    // number
+    println!("I'm a Rustacean!");
+    let x: i32 = 20;
+    println!("The value of x is: {}", x*2);
+    for i in 0..x {
+        println!("i = {}", i);
+    }
 //     // string
-//     for c in str.chars() {
-//             println!("check = {}\n", c);
-//         }
-//         let b = str.to_lowercase();
-//         prinstln!("str = {}", str[0..2]);
-//     let greeting = String::from("RUST IS COOL");
-//     let char1 = str.chars().nth(1);
-//     match char1 {
-//         Some(c) => println!("char1 = {}", c),
-//         None => println!("No character at index 0"),
-//     }
-//     print!("str: {}", char1.unwrap());
-// }
+    for c in str.chars() {
+            println!("check = {}\n", c);
+        }
+        let b = str.to_lowercase();
+        prinstln!("str = {}", str[0..2]);
+    let greeting = String::from("RUST IS COOL");
+    let char1 = str.chars().nth(1);
+    match char1 {
+        Some(c) => println!("char1 = {}", c),
+        None => println!("No character at index 0"),
+    }
+    print!("str: {}", char1.unwrap());
+}
 
 
 fn conditionalsta(){
@@ -37,5 +37,18 @@ fn conditionalsta(){
     }
     for i in 0..10 {
         print!("i = {}", i);
+    }
+    let sentence = String::from("Hello, world!");
+    let first_word = get_first_word(sentence);
+    print!("first word = {}", first_word);
+    fn get_first_word(sentence: String) -> String{
+        let mut ans = String::from("");
+        for char in sentence.chars(){
+            ans.push_str(char.to_string().as_str());
+            if char == ' '{
+                break;
+            }
+        }
+        return ans;
     }
 }

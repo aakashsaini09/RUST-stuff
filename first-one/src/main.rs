@@ -1,6 +1,10 @@
 fn main() {
-    conditionalsta()
+    conditionalsta();
+    stack_heap();
+    ownershipfunction()
 }
+
+
 fn strInt(){
     // number
     println!("I'm a Rustacean!");
@@ -9,12 +13,13 @@ fn strInt(){
     for i in 0..x {
         println!("i = {}", i);
     }
-//     // string
+    // string
+    let str = String::from("Hello, world!");
     for c in str.chars() {
             println!("check = {}\n", c);
         }
         let b = str.to_lowercase();
-        prinstln!("str = {}", str[0..2]);
+        println!("str = {}", str);
     let greeting = String::from("RUST IS COOL");
     let char1 = str.chars().nth(1);
     match char1 {
@@ -51,4 +56,27 @@ fn conditionalsta(){
         }
         return ans;
     }
+}
+fn stack_heap() {
+   let mut str = String::from("Hello, world!");
+    print!("before update: {}\n", str);
+    print!("Capacity: {}, Length: {}, pointer: {:p}", str.capacity(), str.len(), str.as_ptr());
+
+    str.push_str("second time");
+    print!("After 1st update: {}\n", str);
+    print!("Capacity: {}, Length: {}, pointer: {:p}\n", str.capacity(), str.len(), str.as_ptr());
+
+    for _ in  0..10 {
+        str.push_str("second time");
+    print!("Capacity: {}, Length: {}, pointer: {:p}\n", str.capacity(), str.len(), str.as_ptr());
+    }
+}
+
+
+
+fn ownershipfunction(){
+    let s1 = String::from("hello");
+    print!("s1 = {}\n", s1);
+    let s2 = s1;
+    println!("s1 = {}", s2);
 }
